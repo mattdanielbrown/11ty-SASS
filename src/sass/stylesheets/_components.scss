@@ -1,0 +1,94 @@
+
+%button {
+	appearance       : none;
+	font-size        : 1em;
+	font-family      : inherit;
+	font-weight      : 600;
+	line-height      : 1;
+	border           : none;
+	border-radius    : .25em;
+	padding          : .5em .75em;
+	vertical-align   : middle;
+	cursor           : pointer;
+	transition       : all 120ms;
+	transform        : translate3d(0, 0, 0);
+	display          : inline-block;
+	
+	$_this-color     : $default-button-color;
+	background-color : $_this-color;
+	color            : $default-button-text;
+	
+	&:hover {
+		$_this-color     : darken($_this-color, 5%);
+		background-color : $_this-color;
+	}
+	
+	&:focus {
+		$_this-color     : darken($_this-color, 5%);
+		background-color : $_this-color;
+		outline          : $primary-color solid 2px;
+		outline-offset   : -2px;
+		box-shadow       : 0 0 0 4px rgba($primary-color, 0.25);
+	}
+	
+	&:active {
+		$_this-color     : darken($_this-color, 5%);
+		background-color : $_this-color;
+		transform        : translate3d(0, 2px, 0);
+	}
+	
+	@media screen and (max-width : 559px) {
+		display     : block;
+		width       : 100%;
+		line-height : 1.75;
+	}
+	
+	&.primary {
+		$_this-color     : $primary-color;
+		background-color : $_this-color;
+		color            : white;
+		
+		&:hover {
+			$_this-color     : darken($_this-color, 5%);
+			background-color : $_this-color;
+		}
+		
+		&:focus {
+			$_this-color     : darken($_this-color, 5%);
+			background-color : $_this-color;
+		}
+		
+		&:active {
+			$_this-color     : darken($_this-color, 5%);
+			background-color : $_this-color;
+		}
+	}
+	
+	&.secondary {
+		$_this-color     : $secondary-color;
+		background-color : $_this-color;
+		color            : white;
+		
+		&:hover {
+			$_this-color     : darken($_this-color, 5%);
+			background-color : $_this-color;
+		}
+		
+		&:focus {
+			$_this-color     : darken($_this-color, 5%);
+			background-color : $_this-color;
+		}
+		
+		&:active {
+			$_this-color     : darken($_this-color, 5%);
+			background-color : $_this-color;
+		}
+	}
+}
+
+button, .button, [role='button'],
+[type='button'], [type='reset'],
+[type='submit'] {
+	@extend %button;
+	@extend %fix-iOS-tap-highlight;
+}
