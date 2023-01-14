@@ -129,6 +129,8 @@ button, .button, [role='button'],
   transition: all 120ms;
   transform: translate3d(0, 0, 0);
   display: inline-block;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
   background-color: #dbdbdb;
   color: #494858; }
   button:hover, .button:hover, :hover[role='button'],
